@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav-bar</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: #61bcf9;
+            color: aliceblue;
+            font-family: 'cairo';
+        }
+        header {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #3f80ac;
+        }
+        header ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+        header ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        button {
+            all: unset;
+        }
+        button {
+            display: none;
+            cursor: pointer;
+        }
+        .social button {
+            display: inline-block;
+            margin: 15px 10px;
+            color: #222;
+            cursor: pointer;
+        }
+        .sec-list {
+            display: none;
+            position: relative;
+        }
+        .sec-list ul {
+            margin-left: 10px;
+            display: none;
+            text-align: center;
+        }
+        .sec-list ul li {
+            margin: 20px 0;
+        }
+        .show {
+            display: none;
+            background-color: #0099ff;
+            animation-name: animation;
+            animation-duration: 0.2s;
+            overflow: hidden;
+            height: 350px;
+        }
+        .hide {
+            display: block;
+            animation-name: hide1;
+            background-color: #0099ff;
+            animation-duration: 0.2s;
+            height: 0;
+            overflow: hidden;
+        }
+
+        @keyframes hide1 {
+          0% {
+              height: 350px;
+          }
+          100% {
+              height: 0 !important;
+          }
+        }
+
+        @keyframes animation {
+          0% {
+              height: 0;
+          }
+          100% {
+              height: 350px;
+          }
+        }
+        #navBar2 {
+            display: none;
+        }
+        .close {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 780px) {
+            header ul , .social {
+                display: none;
+            }
+            .sec-list ul {
+                display: block;
+            }
+            .show {
+                display: block;
+            }
+            button {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ziad fawzy</h1>
+        <div id="list">
+            <ul>
+                <li>home</li>
+                <li>about</li>
+                <li>skills</li>
+                <li>education</li>
+                <li>sevices</li>
+                <li>contact</li>
+            </ul>
+        </div>
+        <div class="social">
+            <button>f</button>
+            <button>WhatssApp</button>
+            <button>insta</button>
+        </div>
+        <button id="navBar">click</button>
+        <button id="navBar2">click</button>
+    </header>
+    <div id="list_section" class="sec-list">
+        <ul>
+            <li>home</li>
+            <li>about</li>
+            <li>skills</li>
+            <li>education</li>
+            <li>sevices</li>
+            <li>contact</li>
+        </ul>
+        <button id="close" class="close">X</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
